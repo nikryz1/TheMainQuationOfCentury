@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+/* Styling for the question text */
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for the buttons */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Special styling for the "No" button */
+#noButton {
+    background-color: #f44336;
+}
+</style>
+</head>
+<body>
+
+<h1>Are you gay?</h1>
+
+<!-- Answer buttons -->
+<button onclick="alert('Great, you accepted yourself! 😊')">Yes</button>
+<button id="noButton" onclick="alert('Oops, couldn\'t catch me! 😄')">No</button>
+
+<script>
+// Select the "No" button
+const noButton = document.getElementById('noButton');
+
+// Add an event for mouseover on the "No" button
+noButton.onmouseover = function() {
+    // Get random coordinates within the screen
+    const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+    const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+
+    // Move the "No" button to the new coordinates
+    noButton.style.position = 'absolute';
+    noButton.style.left = randomX + 'px';
+    noButton.style.top = randomY + 'px';
+}
+</script>
+
+</body>
+</html>
